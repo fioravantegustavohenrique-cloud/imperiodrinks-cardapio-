@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Império Drinks — Cardápio</title>
+<style>
+:root{--bg:#090909;--card:#171717;--gold:#ffbd00;--red:#ff3b30;--text:#fff;--muted:#d0d0d0}
+*{box-sizing:border-box} body{margin:0;background:linear-gradient(135deg,#090909,#1c0800);color:var(--text);font-family:Arial,sans-serif}
+header{padding:28px 18px;text-align:center;background:linear-gradient(135deg,#ffb300,#ff3b30);color:#111}
+h1{margin:0;font-size:34px;font-weight:900} header p{margin:7px 0 0;font-weight:700}
+nav{position:sticky;top:0;background:#101010;padding:10px;display:flex;gap:7px;overflow:auto;z-index:2}
+nav a{white-space:nowrap;background:#262626;color:#fff;text-decoration:none;padding:9px 12px;border-radius:20px;font-size:13px}
+main{max-width:760px;margin:auto;padding:14px}
+section{background:var(--card);border:1px solid #303030;border-radius:18px;margin:14px 0;padding:18px;box-shadow:0 8px 25px #0007}
+h2{color:var(--gold);margin:0 0 13px;font-size:22px}
+.item{padding:10px 0;border-bottom:1px solid #333;display:flex;justify-content:space-between;gap:14px}
+.item:last-child{border-bottom:0}.name{font-weight:700}.price{font-weight:900;color:#ffd24a;white-space:nowrap}
+.sub{color:var(--muted);font-size:14px;line-height:1.55;margin:5px 0}
+.badge{display:inline-block;background:#ff3b30;color:white;padding:4px 8px;border-radius:10px;font-size:11px;font-weight:800;margin:3px}
+footer{text-align:center;padding:25px;color:#bbb}
+
+.cartbar{position:fixed;left:12px;right:12px;bottom:12px;background:#ffbd00;color:#111;padding:12px 15px;border-radius:16px;box-shadow:0 8px 30px #000b;display:flex;justify-content:space-between;align-items:center;gap:10px;z-index:10;font-weight:900}.cartbar button{border:0;background:#111;color:#fff;padding:9px 14px;border-radius:10px;font-weight:900}.qty{display:flex;align-items:center;gap:7px;margin-left:auto}.qty button{width:30px;height:30px;border:0;border-radius:50%;background:#ffbd00;color:#111;font-size:20px;font-weight:900}.qty span{min-width:22px;text-align:center;font-weight:900}.item{align-items:center}.item .name{flex:1}
+</style>
+</head>
+<body>
+<header><h1>🍹 IMPÉRIO DRINKS</h1><p>Drinks • Bebidas • Lanches • Combos</p></header>
+<nav>
+<a href="#caipirinhas">🍋 Caipirinhas</a><a href="#batidas">🍓 Batidas</a><a href="#gin">🍸 Gin & Drinks</a>
+<a href="#doses">🥃 Doses</a><a href="#raspadinhas">🧊 Raspadinhas</a><a href="#drinks">🍹 Drinks</a>
+<a href="#cervejas">🍺 Cervejas</a><a href="#combos">🔥 Combos</a><a href="#lanches">🍔 Lanches</a><a href="#bebidas">🥤 Bebidas</a>
+</nav>
+<main>
+<section id="caipirinhas"><h2>🍋 Caipirinhas</h2>
+<div class="item" data-name="Caipirinha tradicional  Morango • Maracujá • Abacaxi • Limão • Kiwi"><span class="name">Caipirinha tradicional<br><span class="sub">Morango • Maracujá • Abacaxi • Limão • Kiwi</span></span><span class="price">R$ 14,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Caipi Gin"><span class="name">Caipi Gin</span><span class="price">R$ 17,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Caipi Gin — 2 unidades"><span class="name">Caipi Gin — 2 unidades</span><span class="price">R$ 29,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Caipi Gin — 4 unidades"><span class="name">Caipi Gin — 4 unidades</span><span class="price">R$ 49,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Caipirinha de cerveja  Copo 770 ml • Smirnoff + Corona ou Heineken"><span class="name">Caipirinha de cerveja<br><span class="sub">Copo 770 ml • Smirnoff + Corona ou Heineken</span></span><span class="price">R$ 24,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<p class="sub"><b>Sabores:</b> Morango • Maracujá • Abacaxi • Hortelã • Frutas vermelhas • Tropical</p>
+<p><span class="badge">ESPECIAIS</span></p>
+<div class="item" data-name="Smirnoff"><span class="name">Smirnoff</span><span class="price">R$ 19,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Absolut"><span class="name">Absolut</span><span class="price">R$ 24,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Beefeater"><span class="name">Beefeater</span><span class="price">R$ 34,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+</section>
+
+<section id="batidas"><h2>🍓 Batidas Gourmet</h2>
+<div class="item" data-name="Batidas de fruta gourmet"><span class="name">Batidas de fruta gourmet</span><span class="price">R$ 19,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<p class="sub"><b>Sabores:</b> Morango • Maracujá • Amendoim • Milho verde • Coco • Açaí • Prestígio • Pina Colada • Sensação • Moranguete</p>
+<div class="item" data-name="Batidas 300 ml — Garrafinha"><span class="name">Batidas 300 ml — Garrafinha</span><span class="price">R$ 9,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+</section>
+
+<section id="gin"><h2>🍸 Gin & Drinks</h2>
+<div class="item" data-name="Gin com fruta"><span class="name">Gin com fruta</span><span class="price">R$ 14,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Doses de gin"><span class="name">Doses de gin</span><span class="price">a partir de R$ 9,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Gin Invictos"><span class="name">Gin Invictos</span><span class="price">R$ 9,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Busca Brisa"><span class="name">Busca Brisa</span><span class="price">R$ 14,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Drink pronto 700 ml"><span class="name">Drink pronto 700 ml</span><span class="price">R$ 9,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Kariri c/ Mel 700 ml"><span class="name">Kariri c/ Mel 700 ml</span><span class="price">R$ 14,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+</section>
+
+<section id="doses"><h2>🥃 Doses & Destilados</h2>
+<p class="sub">Jim Gordon’s • Beefeater • Smirnoff • Absolut • Whisky</p>
+<p class="sub"><b>Whisky:</b> Cavalo R$ 30 • Jack R$ 40 • Black R$ 50</p>
+<p class="sub"><b>Combinações:</b> Red Bull • Monster • Sucos</p>
+</section>
+
+<section id="raspadinhas"><h2>🧊 Raspadinhas</h2><div class="item" data-name="Raspadinhas — diversos sabores"><span class="name">Raspadinhas — diversos sabores</span><span class="price">Preço a definir</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div></section>
+
+<section id="drinks"><h2>🍹 Drinks</h2>
+<div class="item" data-name="Frozen"><span class="name">Frozen</span><span class="price">R$ 14,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<p class="sub">Oferta: <b>R$ 9,99</b></p>
+<div class="item" data-name="Kariri c/ Mel"><span class="name">Kariri c/ Mel</span><span class="price">R$ 14,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Brisa Mágica + Frutas"><span class="name">Brisa Mágica + Frutas</span><span class="price">R$ 19,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+</section>
+
+<section id="cervejas"><h2>🍺 Cervejas</h2>
+<p class="sub">Corona • Heineken • Original • Amstel • Skol</p>
+<div class="item" data-name="Skol / Original / Amstel / Budweiser"><span class="name">Skol / Original / Amstel / Budweiser</span><span class="price">R$ 4,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Corona / Heineken"><span class="name">Corona / Heineken</span><span class="price">R$ 9,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Litrão"><span class="name">Litrão</span><span class="price">R$ 11,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Baldes de cervejas"><span class="name">Baldes de cervejas</span><span class="price">Preço a definir</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+</section>
+
+<section id="combos"><h2>🔥 Combos</h2>
+<p class="sub"><b>Gin:</b> Invictos R$ 40 • Eternit R$ 50 • Gordon’s R$ 120 • Beefeater R$ 135</p>
+<p class="sub"><b>Whisky:</b> Cavalo • Jack • Black</p>
+<p class="sub"><b>Vodka:</b> Askov R$ 34,99 • Smirnoff R$ 55,00 • Absolut R$ 90,00</p>
+<p class="sub"><b>Absolut com suco:</b> R$ 90,00 &nbsp; | &nbsp; <b>com Red Bull:</b> R$ 120,00</p>
+</section>
+
+<section id="lanches"><h2>🍔 Lanches & Porções</h2>
+<div class="item" data-name="X-Burguer / X-Salada"><span class="name">X-Burguer / X-Salada</span><span class="price">Consultar</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Hot Dog 🌭"><span class="name">Hot Dog 🌭</span><span class="price">Consultar</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Porções"><span class="name">Porções</span><span class="price">Consultar</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+</section>
+
+<section id="bebidas"><h2>🥤 Refrigerantes, Sucos & Energéticos</h2>
+<div class="item" data-name="Água"><span class="name">Água</span><span class="price">R$ 2,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Guaravita"><span class="name">Guaravita</span><span class="price">R$ 4,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Refri 200 ml"><span class="name">Refri 200 ml</span><span class="price">R$ 2,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Latas"><span class="name">Latas</span><span class="price">R$ 4,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Coca-Cola lata"><span class="name">Coca-Cola lata</span><span class="price">R$ 5,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Refrigerante 2 L"><span class="name">Refrigerante 2 L</span><span class="price">R$ 8,49</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Energético lata"><span class="name">Energético lata</span><span class="price">R$ 11,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+<div class="item" data-name="Energético 2 L"><span class="name">Energético 2 L</span><span class="price">R$ 9,99 / R$ 11,99</span><div class="qty"><button onclick="changeQty(this,-1)">−</button><span>0</span><button onclick="changeQty(this,1)">+</button></div></div>
+</section>
+</main>
+<footer>🍹 IMPÉRIO DRINKS • Cardápio digital<br>Sem quantidade mínima e sem valor mínimo para pedidos.<br>Preços sujeitos a alteração.</footer>
+
+<div class="cartbar"><span>🛒 <span id="count">0</span> item(ns)</span><span id="total">R$ 0,00</span><button onclick="showOrder()">Ver pedido</button></div>
+<script>
+const prices={};document.querySelectorAll('.item').forEach(item=>{const p=item.querySelector('.price')?.textContent||'';const m=p.match(/(\d+[,.]\d{2})/);prices[item.dataset.name]=m?parseFloat(m[1].replace('.','').replace(',','.')):0;});
+function changeQty(btn,d){const s=btn.parentElement.querySelector('span');s.textContent=Math.max(0,parseInt(s.textContent)+d);updateCart();}
+function updateCart(){let c=0,t=0;document.querySelectorAll('.item').forEach(i=>{const q=parseInt(i.querySelector('.qty span').textContent);c+=q;t+=q*(prices[i.dataset.name]||0)});document.getElementById('count').textContent=c;document.getElementById('total').textContent=t.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});}
+function showOrder(){const l=[];document.querySelectorAll('.item').forEach(i=>{const q=parseInt(i.querySelector('.qty span').textContent);if(q)l.push(`${q}x ${i.dataset.name}`)});if(!l.length){alert('Selecione pelo menos um produto.');return}alert('PEDIDO\n\n'+l.join('\n')+'\n\nSem quantidade mínima e sem valor mínimo para pedido.');}
+</script>
+</body>
+</html>
